@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  api:
+    build: 
+      context: ./api
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - MODEL_PATH=/model_artifacts/lgb_model.txt
+    volumes:
+      - ./api:/app
+      - ./model/model_artifacts:/model_artifacts
+
+  frontend:
+    build: 
+      context: ./frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - api
