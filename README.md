@@ -10,7 +10,7 @@
 
 *A production-grade, serverless Machine Learning pipeline built entirely on GCP's free tiers.*
 
-🎯 **Target Role:** Software Developer — Analytics & AI Platform (REWE digital)
+ Analytics & AI Platform 
 
 </div>
 
